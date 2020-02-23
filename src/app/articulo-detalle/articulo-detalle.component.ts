@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticulosService } from '../services/articulos.service';
 import { Articulo } from '../Models/articulo';
+import { User } from '../Models/User';
 
 @Component({
   selector: 'app-articulo-detalle',
@@ -9,11 +10,15 @@ import { Articulo } from '../Models/articulo';
 })
 export class ArticuloDetalleComponent implements OnInit {
   articulo: Articulo = new Articulo();
+  usuario: User = new User();
   constructor(private ArticuloInyectado: ArticulosService) { 
     this.articulo = this.ArticuloInyectado.articulo
   }
   
   ngOnInit() {
+    this.ArticuloInyectado.leerUsuario(this.articulo.userId).subscribe((usuarioDesdeApi)=> {
+      this.usuario = usuarioDesdeApi;
+    })
   }
 
 }

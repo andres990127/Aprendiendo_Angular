@@ -16,25 +16,11 @@ export class HomeComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.articulos.push({
-      titulo: "Curso de new core",
-      descripcion: "Aqui se inserta un texto de descripcion",
-      fecha : new Date(), //Fecha actual.
-      usuario: `${this.UsuarioInyectado.usuario.nombre} ${this.UsuarioInyectado.usuario.apellido}`
-    },
-    {
-      titulo: "Curso de Angular",
-      descripcion: "Aqui se inserta un texto de descripcion",
-      fecha : new Date('04/25/2019'),
-      usuario: `${this.UsuarioInyectado.usuario.nombre} ${this.UsuarioInyectado.usuario.apellido}`
-    },
-    {
-      titulo: "Curso de Flutter",
-      descripcion: "Aqui se inserta un texto de descripcion",
-      fecha : new Date('5/10/2019'),
-      usuario: `${this.UsuarioInyectado.usuario.nombre} ${this.UsuarioInyectado.usuario.apellido}`
-    })
-  }
+    this.ArticuloInyectado.leerNoticias().subscribe((articulosDesdeApi)=> {
+      this.articulos = articulosDesdeApi;
+    });
+    }
+  
   irAlDetalle(articulo: Articulo)
   {
     this.ArticuloInyectado.articulo = articulo;

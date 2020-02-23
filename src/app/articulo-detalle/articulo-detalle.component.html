@@ -1,15 +1,21 @@
 <div class="container">
     <h4>
-        {{articulo.titulo}}
+        {{articulo.title}}
     </h4>
 
     <p>
-        {{articulo.descripcion}}
+        {{articulo.body}}
     </p>
-    <p>
-        {{articulo.fecha | date}}
-    </p>
+<!--     <p>
+        {{articulo.id}}
+    </p> -->
+<!--     <h4>
+        {{articulo.userId}}
+    </h4> -->
     <h4>
-        {{articulo.usuario}}
+        {{usuario.name}}
     </h4>
+    <p>
+        {{usuario.address.city}} {{usuario.address.street}}
+    </p>
 </div>
