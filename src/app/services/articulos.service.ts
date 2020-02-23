@@ -31,4 +31,10 @@ export class ArticulosService {
   {
     return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users')
   }
+
+  borrarArticulo(id : number) : Observable<any>
+  {
+    return this.http.delete<any>('https://jsonplaceholder.typicode.com/posts/' + id)
+  }
+  
 }
