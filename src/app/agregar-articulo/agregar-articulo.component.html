@@ -1,4 +1,13 @@
 <div class="container">
+<!--     <h2 *ngIf="esNuevo">
+        Agregar
+    </h2>
+    <h2 *ngIf="!esNuevo">
+        Editar
+    </h2> -->
+    <h2>
+        {{titulo}}
+    </h2>
     <form [formGroup]="formularioArticulo">
         <div class="from-group">
             <label for="">Titulo</label>
@@ -20,5 +29,6 @@
         </div>
     </form>
 
-    <button class="btn btn-primary" [disabled]="!formularioArticulo.valid" (click)="agregar()"> Agregar </button>
+    <button *ngIf="esNuevo" class="btn btn-primary" [disabled]="!formularioArticulo.valid" (click)="agregar()"> Agregar </button>
+    <button *ngIf="!esNuevo" class="btn btn-success" [disabled]="!formularioArticulo.valid" (click)="editar()"> Editar </button>
 </div>

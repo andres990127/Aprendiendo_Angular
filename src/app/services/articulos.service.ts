@@ -37,4 +37,8 @@ export class ArticulosService {
     return this.http.delete<any>('https://jsonplaceholder.typicode.com/posts/' + id)
   }
   
+  actualizarArticulo(articlo : Articulo) : Observable<Articulo>
+  {
+    return this.http.put<Articulo>('https://jsonplaceholder.typicode.com/posts/' + this.articulo.id, this.articulo)
+  }
 }
