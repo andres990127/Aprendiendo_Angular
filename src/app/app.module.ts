@@ -9,7 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ArticuloDetalleComponent } from './articulo-detalle/articulo-detalle.component';
 import { ArticulosService } from './services/articulos.service';
-import { HttpClientModule } from '@angular/common/http' //SE IMPORTA EL MODULO HTTP
+import { HttpClientModule } from '@angular/common/http';
+import { AgregarArticuloComponent } from './agregar-articulo/agregar-articulo.component' //SE IMPORTA EL MODULO HTTP
+import {ReactiveFormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { HttpClientModule } from '@angular/common/http' //SE IMPORTA EL MODULO H
     EncabezadoComponent,
     HomeComponent,
     PerfilComponent,
-    ArticuloDetalleComponent
+    ArticuloDetalleComponent,
+    AgregarArticuloComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     UsuarioService, //IMPORTAMOS EL SERVICIO CREADO!!!
